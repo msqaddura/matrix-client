@@ -1,0 +1,23 @@
+.login-form {
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 50px;
+  border: 1px $light-color solid;
+  background-color: $dark-color;
+  & input {
+    &[type="text"] {
+      background-color: $dim-color;
+      border: 0;
+      padding: 5px;
+      color: $light-color;
+    }
+    &[type="submit"] {
+      margin: 0 auto;
+      margin-top: 10px;
+      display: block;
+      background-color: $light-color;
+      color: $dark-color;
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import "theme/default";
+
+$font-family: "Open Sans", Helvetica, Arial, sans-serif;
+$smoke: whitesmoke;
+$dark-color: map-get($color-map, site-primary-color);
+$light-color: map-get($color-map, site-secondary-color);
+$dim-color: map-get($color-map, site-tertiary-color);
+$attention-color: map-get($color-map, site-quinary-color);
