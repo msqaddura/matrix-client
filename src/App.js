@@ -63,7 +63,12 @@ class App extends Component {
                     <Login join={this.join.bind(this)} />
                 )}
                 {error ? (
-                    <div className="fixed-bottom error-console">{error}</div>
+                    <div className="fixed-bottom error-console">
+                        <p>
+                            <i className="fa fa-warning" />
+                            {error}
+                        </p>
+                    </div>
                 ) : null}
             </div>
         );
