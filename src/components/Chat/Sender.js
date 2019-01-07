@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { socketService } from '../../services/SocketService';
+
+//TODO: just find a better name :D TextInput?
 class Sender extends Component {
     constructor(props) {
         super(props);

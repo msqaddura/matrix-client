@@ -1,5 +1,9 @@
 import io from 'socket.io-client';
 const SOCKET_URL = process.env.SOCKET_URL;
+/**
+ * handle the socket here, 
+ * only App ill call connect & join while other componenents can sendMessage
+ */
 class SocketService {
   socket;
   //using this alone will leak
