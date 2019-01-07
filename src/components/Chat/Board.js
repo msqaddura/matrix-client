@@ -15,6 +15,11 @@ class Board extends Component {
         socketService.leave();
     }
 
+    // on every other message scroll to the bottom so user sees the latest
+    componentDidUpdate() {
+        this.messagesEnd.scrollIntoView({ behavior: 'smooth',block: 'end' });
+    }
+
     render() {
         return (
             <div className="full-area full-flex">
@@ -48,13 +53,16 @@ class Board extends Component {
                             }
                         })}
                     </ul>
+                    <div style={{ float:'left', clear: 'both' }}
+                        ref={(el) => { this.messagesEnd = el; }}>
+                    </div>
                 </main>
                 <footer>
                     <Sender />
                 </footer>
             </div>
         );
-    }
+    }    
 }
 Board.propTypes = {
     messages: PropTypes.array,

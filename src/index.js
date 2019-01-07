@@ -4,3 +4,4 @@ import { App } from './App';
 import './styles/main.scss';
 
 ReactDOM.render(<App />, document.getElementById('app'));
+//no need for server workers

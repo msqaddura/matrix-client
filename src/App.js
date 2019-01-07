@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Login } from './components/Login/Login';
 import { Board } from './components/Chat/Board';
 import { socketService } from './services/SocketService';
+/**
+ * mixture of flyweight & component
+ * most of the logic is done here specially the sockets & "routing"
+ */
 class App extends Component {
     constructor(props) {
         super(props);
@@ -23,16 +27,17 @@ class App extends Component {
             })
             .on('error', error => {
                 console.error(error);
-                this.setState({ error: 'Server Error' });
+                this.setState({ error: ' Server Error ' });
             })
             .on('connect_error', () => {
-                this.setState({ error: 'Connect Error', isPending: false });
+                this.setState({ error: ' Connection Error ', isPending: false });
             })
             .on('joined', message => {
                 this.setState({
                     username: message.username,
                     online: true,
-                    isPending: false
+                    isPending: false,
+                    messages:[]
                 });
             })
             .on('message', message => {
@@ -42,10 +47,14 @@ class App extends Component {
                 socketService.join(username);
             })
             .on('conflict', () => {
-                this.setState({ error: 'User Exists, Try new name!' });
+                this.setState({ error: ' User Exists, Try new name ' });
+                socket.close();
             })
             .on('timeout', () => {
-                this.setState({ error: 'You were kicked due to inactivity!' });
+                this.setState({ error: ' You were kicked due to inactivity ' });
+            })
+            .on('shutdown', () => {
+                this.setState({ error: ' Server was shutdown ' });
             })
             .on('disconnect', () => {
                 this.setState({ username: null, online: false, messages: [] });
@@ -64,9 +73,10 @@ class App extends Component {
                 )}
                 {error ? (
                     <div className="fixed-bottom error-console">
-                        <p>
+                        <p> 
                             <i className="fa fa-warning" />
                             {error}
+                            <i className="fa fa-warning" />
                         </p>
                     </div>
                 ) : null}

@@ -5,14 +5,14 @@ class InfoMessage extends Component {
     render() {
         return (
             <li className="chat-message is-info">
-                <i className="fa fa-square" />
+                <i className="fa fa-fire" />
                 <span>
                     {' '}
                     <b> {this.props.username} </b>
                 </span>
                 <span>
                     {' '}
-                    <i>{this.props.text} </i>
+                    <span>{this.props.text} </span>
                 </span>
             </li>
         );

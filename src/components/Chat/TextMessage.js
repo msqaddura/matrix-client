@@ -17,7 +17,7 @@ class TextMessage extends Component {
         :
                 <span className="chat-message-text">
                     {' '}
-                    <i>{this.props.text}</i>
+                    <i> {this.props.text}</i>
                 </span>
             </li>
         );
