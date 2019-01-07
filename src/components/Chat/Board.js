@@ -19,7 +19,9 @@ class Board extends Component {
         return (
             <div className="full-area full-flex">
                 <header>
-                    <button onClick={this.onLeave.bind(this)}>leave</button>
+                    <button onClick={this.onLeave.bind(this)}>
+                        <i className="fa fa-close fa-lg" />
+                    </button>
                     <h2>{this.props.username}</h2>
                 </header>
                 <main className="flex-stretch">

@@ -31,7 +31,7 @@ class Sender extends Component {
                     />
                 </div>
                 <div>
-                    <input type="submit" value="Submit" disabled={!this.state.value} />
+                    <input type="submit" value="Send" disabled={!this.state.value} />
                 </div>
             </form>
         );

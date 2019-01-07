@@ -35,7 +35,7 @@ class Login extends Component {
                         placeholder="Username..."
                     />
                     <br />
-                    <input type="submit" value="Submit" disabled={this.isDisabled} />
+                    <input type="submit" value="Join as Guest " disabled={this.isDisabled} />
                 </form>
             </div>
         );

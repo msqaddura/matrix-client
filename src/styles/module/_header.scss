@@ -10,5 +10,11 @@ header {
   }
   & button {
     float: right;
+    border-style: none;
+    float: right;
+    width: 50px;
+    background: red;
+    color: white;
+    border : 5px 0 0 5px;
   }
 }
