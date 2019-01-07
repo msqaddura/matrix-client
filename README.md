@@ -1,3 +1,6 @@
+
+![Alt text](https://github.com/msqaddura/matrix-client/blob/master/public/screen.png?raw=true "Screen Shot")
+
 # matrix-client
 1) `npm install`
 2) `npm start`
