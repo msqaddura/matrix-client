@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'build')
+        path: path.resolve(__dirname, 'docs')
     },
     module: {
         rules: [
@@ -39,7 +39,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebPackPlugin(['build'], { root: path.resolve(__dirname) }),
+        new CleanWebPackPlugin(['docs'], { root: path.resolve(__dirname) }),
         new HtmlWebPackPlugin({
             template: './public/index.html',
             favicon: './public/favicon.ico',
@@ -52,7 +52,7 @@ module.exports = {
     ],
     devtool: 'cheap-module-eval-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'build'),
+        contentBase: path.resolve(__dirname, 'docs'),
         compress: true,
         port: 3001
     }

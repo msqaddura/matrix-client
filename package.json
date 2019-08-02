@@ -8,7 +8,8 @@
     "serve:prod": "webpack -p && live-server ./build",
     "serve": "webpack-dev-server --open",
     "start": "npm run serve",
-    "test": "echo \"No tests available\" && exit 0"
+    "test": "echo \"No tests available\" && exit 0",
+    "prod":"webpack -p"
   },
   "keywords": [
     "websockets",
@@ -42,6 +43,7 @@
     "style-loader": "^0.20.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
@@ -54,11 +56,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }
